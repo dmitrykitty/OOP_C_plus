@@ -1,0 +1,11 @@
+# ninja log v6
+13	535	7643879810516425	CMakeFiles/OOP.dir/ex2_7_static_vars/main_1.cpp.obj	f78dc9b49d08e3e7
+1	270	7645284749668683	build.ninja	7307335f9308a16e
+20	131	7643667601256451	ex_2_6.exe	8bd6bc173c8972d5
+951	1165	7644255060852016	OOP.exe	db2919b37b7697b2
+6	592	7643794127278429	CMakeFiles/OOP.dir/ex2_6_methods_ot_of_class/main.cpp.obj	c0bd6af897407995
+19	90	7643879810576431	CMakeFiles/OOP.dir/ex2_7_static_vars/Point.cpp.obj	828ada6bcf573942
+12	616	7643794127318276	CMakeFiles/OOP.dir/ex2_6_methods_ot_of_class/PointND.cpp.obj	e96a7fe8d9fcc30c
+20	647	7643692432931093	CMakeFiles/OOP.dir/ex2_6_methods_ot_of_class/main_1.cpp.obj	4338d32971b04330
+28	938	7644255051624033	CMakeFiles/OOP.dir/ex2_8_singlton/Singleton.cpp.obj	f09ac4f1541748a1
+23	951	7644255051572674	CMakeFiles/OOP.dir/ex2_8_singlton/main.cpp.obj	33d91208c427f08f
