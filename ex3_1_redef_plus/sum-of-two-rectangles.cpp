@@ -26,3 +26,14 @@ public:
         return Rectangle(new_x0, new_y0, new_x1, new_y1);
     }
 };
+
+
+
+
+int main(void)
+{
+    Rectangle rect_1(-5, 0, 10, 12), rect_2(1, -2, 7, 14);
+    Rectangle res = rect_1 + rect_2;
+
+    return 0;
+}
