@@ -100,13 +100,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "ex2_8_singlton/main.cpp",
+			"path" : "ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "ex2_8_singlton/Singleton.cpp",
+			"path" : "ex3-3-redef-rowna-sie/DArray.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

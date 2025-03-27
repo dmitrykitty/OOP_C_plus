@@ -49,17 +49,17 @@ cmake_ninja_workdir = D$:/study/AGH/C_plus_projects/OOP/cmake-build-debug/
 
 build cmake_object_order_depends_target_OOP: phony || .
 
-build CMakeFiles/OOP.dir/ex2_8_singlton/main.cpp.obj: CXX_COMPILER__OOP_unscanned_Debug D$:/study/AGH/C_plus_projects/OOP/ex2_8_singlton/main.cpp || cmake_object_order_depends_target_OOP
-  DEP_FILE = CMakeFiles\OOP.dir\ex2_8_singlton\main.cpp.obj.d
+build CMakeFiles/OOP.dir/ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp.obj: CXX_COMPILER__OOP_unscanned_Debug D$:/study/AGH/C_plus_projects/OOP/ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp || cmake_object_order_depends_target_OOP
+  DEP_FILE = CMakeFiles\OOP.dir\ex3-3-redef-rowna-sie\main_dynamic_arrays.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP.dir
-  OBJECT_FILE_DIR = CMakeFiles\OOP.dir\ex2_8_singlton
+  OBJECT_FILE_DIR = CMakeFiles\OOP.dir\ex3-3-redef-rowna-sie
 
-build CMakeFiles/OOP.dir/ex2_8_singlton/Singleton.cpp.obj: CXX_COMPILER__OOP_unscanned_Debug D$:/study/AGH/C_plus_projects/OOP/ex2_8_singlton/Singleton.cpp || cmake_object_order_depends_target_OOP
-  DEP_FILE = CMakeFiles\OOP.dir\ex2_8_singlton\Singleton.cpp.obj.d
+build CMakeFiles/OOP.dir/ex3-3-redef-rowna-sie/DArray.cpp.obj: CXX_COMPILER__OOP_unscanned_Debug D$:/study/AGH/C_plus_projects/OOP/ex3-3-redef-rowna-sie/DArray.cpp || cmake_object_order_depends_target_OOP
+  DEP_FILE = CMakeFiles\OOP.dir\ex3-3-redef-rowna-sie\DArray.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP.dir
-  OBJECT_FILE_DIR = CMakeFiles\OOP.dir\ex2_8_singlton
+  OBJECT_FILE_DIR = CMakeFiles\OOP.dir\ex3-3-redef-rowna-sie
 
 
 # =============================================================================
@@ -69,7 +69,7 @@ build CMakeFiles/OOP.dir/ex2_8_singlton/Singleton.cpp.obj: CXX_COMPILER__OOP_uns
 #############################################
 # Link the executable OOP.exe
 
-build OOP.exe: CXX_EXECUTABLE_LINKER__OOP_Debug CMakeFiles/OOP.dir/ex2_8_singlton/main.cpp.obj CMakeFiles/OOP.dir/ex2_8_singlton/Singleton.cpp.obj
+build OOP.exe: CXX_EXECUTABLE_LINKER__OOP_Debug CMakeFiles/OOP.dir/ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp.obj CMakeFiles/OOP.dir/ex3-3-redef-rowna-sie/DArray.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\OOP.dir

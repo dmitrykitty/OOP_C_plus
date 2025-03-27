@@ -3,5 +3,5 @@ project(OOP)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(OOP ex2_8_singlton/main.cpp
-        ex2_8_singlton/Singleton.cpp)
+add_executable(OOP ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp
+        ex3-3-redef-rowna-sie/DArray.cpp)
