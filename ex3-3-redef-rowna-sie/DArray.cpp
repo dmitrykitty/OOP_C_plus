@@ -18,7 +18,7 @@ void DArray::_resize_array(int size_new) {
     data = temp;
 }
 
-const DArray &DArray::operator=(const DArray &other) {
+DArray &DArray::operator=(const DArray &other) {
     if (this == &other)
         return *this;
 

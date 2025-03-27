@@ -39,7 +39,7 @@ public:
     const int *
     get_data() const { return data; }
 
-    const DArray &operator=(const DArray &other);
+    DArray &operator=(const DArray &other);
 
     void push_back(const int &value);
 
