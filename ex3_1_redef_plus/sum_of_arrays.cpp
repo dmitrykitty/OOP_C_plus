@@ -11,7 +11,7 @@ public:
         set_data(d, length);
     }
 
-    void set_data(int *d, size_t length) {
+    void set_data(const int *d, size_t length) {
         delete[] data;
         size = length;
         data = new int[size];
