@@ -40,4 +40,5 @@ int main() {
   int&& lnk_la2 = std::move(la); //lub w taki sposob - std::move robi to samo, tyko jest bezpeczniejsza
 
   return 0;
+
 }
