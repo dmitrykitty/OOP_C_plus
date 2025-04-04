@@ -40,45 +40,6 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = D$:/study/AGH/C_plus_projects/OOP/cmake-build-debug/
-# =============================================================================
-# Object build statements for EXECUTABLE target OOP
-
-
-#############################################
-# Order-only phony target for OOP
-
-build cmake_object_order_depends_target_OOP: phony || .
-
-build CMakeFiles/OOP.dir/ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp.obj: CXX_COMPILER__OOP_unscanned_Debug D$:/study/AGH/C_plus_projects/OOP/ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp || cmake_object_order_depends_target_OOP
-  DEP_FILE = CMakeFiles\OOP.dir\ex3-3-redef-rowna-sie\main_dynamic_arrays.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\OOP.dir
-  OBJECT_FILE_DIR = CMakeFiles\OOP.dir\ex3-3-redef-rowna-sie
-
-build CMakeFiles/OOP.dir/ex3-3-redef-rowna-sie/DArray.cpp.obj: CXX_COMPILER__OOP_unscanned_Debug D$:/study/AGH/C_plus_projects/OOP/ex3-3-redef-rowna-sie/DArray.cpp || cmake_object_order_depends_target_OOP
-  DEP_FILE = CMakeFiles\OOP.dir\ex3-3-redef-rowna-sie\DArray.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\OOP.dir
-  OBJECT_FILE_DIR = CMakeFiles\OOP.dir\ex3-3-redef-rowna-sie
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target OOP
-
-
-#############################################
-# Link the executable OOP.exe
-
-build OOP.exe: CXX_EXECUTABLE_LINKER__OOP_Debug CMakeFiles/OOP.dir/ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp.obj CMakeFiles/OOP.dir/ex3-3-redef-rowna-sie/DArray.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\OOP.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = OOP.exe
-  TARGET_IMPLIB = libOOP.dll.a
-  TARGET_PDB = OOP.exe.dbg
-
 
 #############################################
 # Utility command for edit_cache
@@ -105,8 +66,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build OOP: phony OOP.exe
-
 # =============================================================================
 # Folder targets.
 
@@ -115,7 +74,7 @@ build OOP: phony OOP.exe
 #############################################
 # Folder: D:/study/AGH/C_plus_projects/OOP/cmake-build-debug
 
-build all: phony OOP.exe
+build all: phony
 
 # =============================================================================
 # Built-in targets

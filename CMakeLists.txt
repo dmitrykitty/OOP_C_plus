@@ -3,5 +3,6 @@ project(OOP)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(OOP ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp
-        ex3-3-redef-rowna-sie/DArray.cpp)
+#add_executable(OOP ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp
+#        ex3-3-redef-rowna-sie/DArray.cpp
+#        ex2_6_methods_ot_of_class/main.cpp)

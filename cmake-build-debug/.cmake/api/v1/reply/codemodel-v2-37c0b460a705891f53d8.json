@@ -12,11 +12,7 @@
 						"string" : "3.30"
 					},
 					"projectIndex" : 0,
-					"source" : ".",
-					"targetIndexes" : 
-					[
-						0
-					]
+					"source" : "."
 				}
 			],
 			"name" : "Debug",
@@ -27,23 +23,10 @@
 					[
 						0
 					],
-					"name" : "OOP",
-					"targetIndexes" : 
-					[
-						0
-					]
+					"name" : "OOP"
 				}
 			],
-			"targets" : 
-			[
-				{
-					"directoryIndex" : 0,
-					"id" : "OOP::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-OOP-Debug-70edc5b365982523cc79.json",
-					"name" : "OOP",
-					"projectIndex" : 0
-				}
-			]
+			"targets" : []
 		}
 	],
 	"kind" : "codemodel",
