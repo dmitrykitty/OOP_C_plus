@@ -4,6 +4,7 @@ project(OOP)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(OOP
-        ex4-2-inheritance/theory.cpp)
+#        ex4-2-inheritance/theory.cpp
+         ex4-2-inheritance/animal.cpp)
 #        ex3-3-redef-rowna-sie/DArray.cpp
 #        ex2_6_methods_ot_of_class/main.cpp)
