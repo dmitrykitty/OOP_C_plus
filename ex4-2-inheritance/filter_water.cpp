@@ -60,7 +60,7 @@ const FilterWater *GeyserClassic::operator[](int index) const {
 }
 
 void GeyserClassic::add_filter(int slot_num, FilterWater *filter) {
-    if (!slots[slot_num - 1] && static_cast<type_filter_water>(slot_num) == filter->get_type())
+    if (!slots[slot_num - 1] && slot_num == filter->get_type())
         slots[slot_num - 1] = filter;
 }
 
