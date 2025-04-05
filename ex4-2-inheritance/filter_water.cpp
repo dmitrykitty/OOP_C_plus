@@ -65,6 +65,15 @@ void GeyserClassic::add_filter(int slot_num, FilterWater *filter) {
 }
 
 int main() {
+    Mechanical filter_1(100);
+    Aragon filter_2(100);
+    Calcium filter_3(100);
+
+    GeyserClassic gc_1;
+    GeyserClassic gc_2(&filter_1);
+    GeyserClassic gc_3(&filter_1, &filter_2);
+    GeyserClassic gc_4(&filter_1, &filter_2, &filter_3);
+
     return 0;
 }
 
