@@ -14,7 +14,7 @@ private:
     type_printer type{pr_none};
 
 public:
-    Printer(std::string model, type_printer type) : model(std::move(model)), type(type) {}
+    Printer(std::string model, type_printer type) :     model(std::move(model)), type(type) {}
 
     const std::string &get_model() const { return model; }
     type_printer get_type() const { return type; }
