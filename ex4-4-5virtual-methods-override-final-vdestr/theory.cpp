@@ -10,7 +10,7 @@ public:
         std::cout << 3;
     }
 
-    virtual ~Base(){}
+    virtual ~Base() = default;
 };
 
 class Derived : public Base {
