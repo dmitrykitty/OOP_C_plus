@@ -13,7 +13,8 @@ add_executable(OOP
         #      ex4-3/printer.cpp
         #ex4-4-5virtual-methods-override-final-vdestr/theory.cpp
         #ex4-4-5virtual-methods-override-final-vdestr/equipment.cpp
-        ex4-4-5virtual-methods-override-final-vdestr/evolution-structure.cpp)
+       # ex4-4-5virtual-methods-override-final-vdestr/evolution-structure.cpp
+        ex4-4-5virtual-methods-override-final-vdestr/common-interface.cpp)
 #ex4-4virtual-methods/function-interface.cpp
 #ex4-4-5virtual-methods-override-final-vdestr/thing-storage.cpp)
 #        ex3-3-redef-rowna-sie/DArray.cpp
