@@ -9,6 +9,8 @@ public:
     virtual void f(double) {
         std::cout << 3;
     }
+
+    virtual ~Base(){}
 };
 
 class Derived : public Base {
@@ -19,10 +21,21 @@ public:
         std::cout << 2;
     }
 
-    void f(double) override {
+    void f(double) override final {
+        //final zabrania przeciazenia f w AfterDerived
+
         std::cout << 4;
     }
 };
+
+class AfterDerived : public Derived {
+    void f(double) override {}//juz nie moze byc tu tego metoda
+    //rowniez moge przeciąrzac metod w Base, nawet jak nie ma go w Derived
+};
+
+//gdy usuwam obiekt - wywoływany jest obiekt tylko clasa Base, bo pointer jest typu Base. żeby rowniez usunąć
+//zatrzymaną pamiec przez destruktor Derived - trzeba zrobic destruktor Base virtualnym(dodano do vtable).
+//Wtedy będzie wywołany destruktor Derived, który juz wywoła destruktor Base.
 
 int main() {
     Derived d;
