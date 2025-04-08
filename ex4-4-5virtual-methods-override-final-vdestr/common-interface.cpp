@@ -24,7 +24,7 @@ public:
     int get_price() const { return price; }
 };
 
-enum { max_size = 100 };
+enum { max_size = 100, size = 4 };
 
 int main() {
     CommonInterface *lst[max_size] = {
@@ -34,15 +34,12 @@ int main() {
         new Thing(19, "Monitor Samsung", 9560),
     };
 
-    for (auto& i : lst) {
-        std::cout << i->get_id() << " ";
+    for (int i = 0; i < size; ++i)
+        std::cout << lst[i]->get_id() << " ";
+
+    for (int i = 0; i < size; ++i) {
+        delete lst[i];
+        lst[i] = nullptr;
     }
-
-
-    for (auto& i : lst) {
-        delete i;
-        i = nullptr;
-    }
-
     return 0;
 }
