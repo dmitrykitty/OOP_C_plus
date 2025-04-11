@@ -4,6 +4,7 @@ project(OOP)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(OOP
+        ex4-6-pure-virt-functions-abstract-classes/person-multiple-inheritance-practise.cpp
         #        ex4-2-inheritance/theory.cpp
         #        ex4-2-inheritance/animal.cpp
         #        ex4-2-inheritance/thing.cpp
@@ -16,7 +17,8 @@ add_executable(OOP
         # ex4-4-5virtual-methods-override-final-vdestr/evolution-structure.cpp
         # ex4-4-5virtual-methods-override-final-vdestr/common-interface.cpp
         #ex4-4-5virtual-methods-override-final-vdestr/employee.cpp
-        ex4-6-pure-virt-functions-abstract-classes/theory.cpp
+        #ex4-6-pure-virt-functions-abstract-classes/theory.cpp
+        #LABS/Lab6.cpp
 )
 #ex4-4virtual-methods/function-interface.cpp
 #ex4-4-5virtual-methods-override-final-vdestr/thing-storage.cpp)
