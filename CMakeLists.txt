@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(OOP
         #ex4-6-pure-virt-functions-abstract-classes/person-multiple-inheritance-practise.cpp
         #ex4-7-multiply-inheritance/multiply-inheritance-practise.cpp
-        ex4-7-multiply-inheritance/mixins-pattern-imitation.cpp
+        #ex4-7-multiply-inheritance/mixins-pattern-imitation.cpp
+        #ex4-8-dimond-inheritance/theory .cpp
+        ex4-8-dimond-inheritance/practise-1.cpp
         #        ex4-2-inheritance/theory.cpp
         #        ex4-2-inheritance/animal.cpp
         #        ex4-2-inheritance/thing.cpp
