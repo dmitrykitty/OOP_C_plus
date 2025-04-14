@@ -16,6 +16,7 @@ add_executable(OOP
         #ex3-3-redef-rowna-sie/DArray.h
         ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp
         ex3-4-operator-square-bracets/practise1.cpp
+        ex3-4-operator-square-bracets/box3D.cpp
         #        ex4-2-inheritance/theory.cpp
         #        ex4-2-inheritance/animal.cpp
         #        ex4-2-inheritance/thing.cpp
