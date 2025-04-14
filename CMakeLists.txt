@@ -10,8 +10,12 @@ add_executable(OOP
         #ex4-8-dimond-inheritance/theory .cpp
         #-8-dimond-inheritance/practise-1.cpp
         #ex4-8-dimond-inheritance/practise-2.cpp
-        ex5-1-2-casts/theory-const-reinterpret.cpp
-        ex5-1-2-casts/theory-static-dynamic.cpp
+        #ex5-1-2-casts/theory-const-reinterpret.cpp
+        #ex5-1-2-casts/theory-static-dynamic.cpp
+        ex3-3-redef-rowna-sie/DArray.cpp
+        #ex3-3-redef-rowna-sie/DArray.h
+        ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp
+        ex3-4-operator-square-bracets/practise1.cpp
         #        ex4-2-inheritance/theory.cpp
         #        ex4-2-inheritance/animal.cpp
         #        ex4-2-inheritance/thing.cpp

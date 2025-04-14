@@ -10,6 +10,17 @@ class DArray {
         value_error = 2123456789
     };
 
+    class Item {
+        DArray *current{};
+        int index{-1};
+
+    public:
+        Item(DArray *current, int index) : current(current), index(index) {}
+
+        int operator=(int right) const;
+        operator int() const;
+    };
+
     int *data{nullptr};
     int length{0};
     int capacity{0};
@@ -30,16 +41,15 @@ public:
 
     ~DArray() { delete[] data; }
 
-    int
-    get_size() const { return length; }
+    int get_size() const { return length; }
+    int get_capacity() const { return capacity; }
+    const int *get_data() const { return data; }
 
-    int
-    get_capacity() const { return capacity; }
+    DArray &operator=(DArray other);
 
-    const int *
-    get_data() const { return data; }
+    void swap(DArray &other) noexcept;
 
-    DArray &operator=(const DArray &other);
+    Item operator[](int index) { return {this, index}; }
 
     void push_back(const int &value);
 
