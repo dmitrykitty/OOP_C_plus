@@ -68,6 +68,12 @@ int main() {
     class Derive : public Base { };
     class Line { };
 
+    Base* base = new Derive();
+    Derive& drv = reinterpret_cast<Derive&>(*base);
+
+    long digit = 53058372;
+    const int* dm = reinterpret_cast<int*>(&digit);
+
     Derive* ptr_drv = new Derive();
     int dist {0};
     double price {0.0};
