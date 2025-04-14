@@ -11,14 +11,29 @@ class DArray {
     };
 
     class Item {
+        enum type_assign {
+            add, sub, mul, div, rem
+        };
+
         DArray *current{};
         int index{-1};
+
+        int _assign_operator(int right, type_assign type) const;
 
     public:
         Item(DArray *current, int index) : current(current), index(index) {}
 
+        bool is_valid_index(int index) const { return index >= 0 && index < current->length; }
+
         int operator=(int right) const;
+
         operator int() const;
+
+        int operator+=(int right) const;
+        int operator*=(int right) const;
+        int operator%=(int right) const;
+        int operator/=(int right) const;
+        int operator-=(int right) const;
     };
 
     int *data{nullptr};
@@ -46,6 +61,8 @@ public:
     const int *get_data() const { return data; }
 
     DArray &operator=(DArray other);
+    DArray &operator+=(const DArray& other);
+    //po elementach this dodajemy elementy other
 
     void swap(DArray &other) noexcept;
 
