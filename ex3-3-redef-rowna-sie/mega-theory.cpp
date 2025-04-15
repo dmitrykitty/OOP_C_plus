@@ -3,6 +3,15 @@
 #include <compare>
 #include <vector>
 
+//sizeof #(preprocesor), nie można dodawać własnych, wbudowane casts,
+//nie mozna operatorow zakresu - ., ::, .*(wskaznik na funkcje)
+
+
+//operatory ktore można przeciąż tylko w klasie [], (), =, ->
+//b po lewej stronie ma byc obiekt klasy
+
+//operatory strumienia tylko poza klasą
+
 struct Complex {
     double re{};
     double im{};
@@ -59,7 +68,7 @@ struct Complex {
     auto operator<=>(const Complex &other) const = default;
 
     //sposob na porownanie char* ze stringiem
-    //jezeli saceship nie jest default, operatory > < >= <= definiują sie automatycznie,
+    //jezeli spaceship nie jest default, operatory > < >= <= definiują sie automatycznie,
     //a == != nie xD
     //bo np dla stringow nie trzeba powornywac całe stringi, bo wystarczy porownac size i będzie działać szybciej
     std::weak_ordering operator <=>(const char *) const {
