@@ -12,9 +12,10 @@ add_executable(OOP
         #ex4-8-dimond-inheritance/practise-2.cpp
         #ex5-1-2-casts/theory-const-reinterpret.cpp
         #ex5-1-2-casts/theory-static-dynamic.cpp
-        ex3-3-redef-rowna-sie/DArray.cpp
+        #ex3-3-redef-rowna-sie/DArray.cpp
         #ex3-3-redef-rowna-sie/DArray.h
-        ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp
+        #ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp
+        ex3-3-redef-rowna-sie/mega-theory.cpp
         #ex3-5-redef-ext-as/practise1.cpp
         #ex3-4-operator-square-bracets/practise1.cpp
         #ex3-4-operator-square-bracets/box3D.cpp
