@@ -34,6 +34,9 @@ class DArray {
         int operator%=(int right) const;
         int operator/=(int right) const;
         int operator-=(int right) const;
+
+        int operator++() const; //prefiks one
+        int operator++(int) const; //postfiks one
     };
 
     int *data{nullptr};

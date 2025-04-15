@@ -24,5 +24,8 @@ int main() {
     for (int i = 0; i < array1.get_size(); i++)
         std::cout << array1[i] << " ";
 
+    std::cout << std::endl;
+    std::cout << array1[5] << " " <<  ++array1[5] << " " << array1[5]++ << " " << array1[5] << std::endl;
+
     return 0;
 }

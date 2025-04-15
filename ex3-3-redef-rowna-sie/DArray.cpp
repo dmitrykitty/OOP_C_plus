@@ -134,3 +134,15 @@ int DArray::Item::operator-=(int right) const {
 int DArray::Item::operator/=(int right) const {
     return _assign_operator(right, div);
 }
+
+int DArray::Item::operator++() const {
+    if (!is_valid_index(index))
+        return value_error;
+    return ++current->data[index];
+}
+
+int DArray::Item::operator++(int) const {
+    if (!is_valid_index(index))
+        return value_error;
+    return current->data[index]++;
+}
