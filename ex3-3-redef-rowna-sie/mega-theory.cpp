@@ -20,7 +20,7 @@ struct Complex {
     Complex(double re, double im): re(re), im(im) {}
 
     /*to samo, co c.operator+(other)
-    jest problem - nie mozna 3.14
+    jest problem - nie mozna int + complex
      Complex operator+(const Complex &other) const {
          return Complex(re + other.re, im + other.im);
     } */

@@ -15,7 +15,8 @@ add_executable(OOP
         #ex3-3-redef-rowna-sie/DArray.cpp
         #ex3-3-redef-rowna-sie/DArray.h
         #ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp
-        ex3-3-redef-rowna-sie/mega-theory.cpp
+        #ex3-3-redef-rowna-sie/mega-theory.cpp
+        ex3-5-redef-ext-as/practise1.cpp
         #ex3-5-redef-ext-as/practise1.cpp
         #ex3-4-operator-square-bracets/practise1.cpp
         #ex3-4-operator-square-bracets/box3D.cpp
