@@ -7,7 +7,7 @@ private:
     object *next;
 
 public:
-    object(short d, object* next = nullptr): data(d), next(next) {}
+    object(short d, object *next = nullptr): data(d), next(next) {}
 
     object *get_next() const { return next; }
     short get_data() const { return data; }
@@ -26,7 +26,6 @@ void push(st_unique_ptr &top, short data) {
     }
     object *next_ptr = top.release();
     top = std::make_unique<object>(data, next_ptr);
-
 }
 
 int main() {
@@ -36,7 +35,7 @@ int main() {
         push(top, i);
 
 
-    object* top_ptr = top.get();
+    object *top_ptr = top.get();
 
     while (top_ptr) {
         std::cout << top_ptr->get_data() << std::endl;
@@ -46,4 +45,3 @@ int main() {
 
     return 0;
 };
-
