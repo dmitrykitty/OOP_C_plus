@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.30)
 project(OOP)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 
 add_executable(OOP
         #ex4-6-pure-virt-functions-abstract-classes/person-multiple-inheritance-practise.cpp
@@ -17,8 +17,12 @@ add_executable(OOP
         #ex3-3-redef-rowna-sie/main_dynamic_arrays.cpp
         #ex3-3-redef-rowna-sie/mega-theory.cpp
         #ex3-5-redef-ext-as/practise1.cpp
-        ex3-5-redef-ext-as/practise2.cpp
-        ex3-5-redef-ext-as/practise3.cpp
+        #ex2-5-smart-pointers/shared-ptr-theory.cpp
+        #ex3-5-redef-ext-as/practise2.cpp
+        advanced_C/3-multiply-inheritance.cpp
+        #ex3-5-redef-ext-as/practise3.cpp
+        #ex3-5-redef-ext-as/practise4.cpp
+        #advanced_C/pointers-to_class_members.cpp
         #ex3-5-redef-ext-as/practise1.cpp
         #ex3-4-operator-square-bracets/practise1.cpp
         #ex3-4-operator-square-bracets/box3D.cpp
