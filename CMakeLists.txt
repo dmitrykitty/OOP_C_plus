@@ -19,7 +19,9 @@ add_executable(OOP
         #ex3-5-redef-ext-as/practise1.cpp
         #ex2-5-smart-pointers/shared-ptr-theory.cpp
         #ex3-5-redef-ext-as/practise2.cpp
-        advanced_C/3-multiply-inheritance.cpp
+       # advanced_C/3-multiply-inheritance.cpp
+        #advanced_C/4-virtual-methods.cpp
+        advanced_C/5-dynamic-cast.cpp
         #ex3-5-redef-ext-as/practise3.cpp
         #ex3-5-redef-ext-as/practise4.cpp
         #advanced_C/pointers-to_class_members.cpp
