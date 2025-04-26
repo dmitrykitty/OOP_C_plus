@@ -22,7 +22,8 @@ add_executable(OOP
         # advanced_C/3-multiply-inheritance.cpp
         #advanced_C/4-virtual-methods.cpp
         #advanced_C/5-dynamic-cast.cpp
-        ex5-3-exceptions-1/exceptions-theory.cpp
+        #ex5-3-exceptions-1/exceptions-theory.cpp
+        ex5-3-exceptions-1/practise-1.cpp
         #ex3-5-redef-ext-as/practise3.cpp
         #ex3-5-redef-ext-as/practise4.cpp
         #advanced_C/pointers-to_class_members.cpp
