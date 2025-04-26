@@ -26,6 +26,7 @@ add_executable(OOP
         #ex5-3-exceptions-1/practise-1.cpp
         #ex5-3-exceptions-1/practise-2.cpp
         ex5-3-exceptions-1/practise-3.cpp
+        ex5-3-exceptions-1/practise-4.cpp
         #ex3-5-redef-ext-as/practise3.cpp
         #ex3-5-redef-ext-as/practise4.cpp
         #advanced_C/pointers-to_class_members.cpp
