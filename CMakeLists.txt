@@ -19,9 +19,10 @@ add_executable(OOP
         #ex3-5-redef-ext-as/practise1.cpp
         #ex2-5-smart-pointers/shared-ptr-theory.cpp
         #ex3-5-redef-ext-as/practise2.cpp
-       # advanced_C/3-multiply-inheritance.cpp
+        # advanced_C/3-multiply-inheritance.cpp
         #advanced_C/4-virtual-methods.cpp
-        advanced_C/5-dynamic-cast.cpp
+        #advanced_C/5-dynamic-cast.cpp
+        ex5-3-exceptions-1/exceptions-theory.cpp
         #ex3-5-redef-ext-as/practise3.cpp
         #ex3-5-redef-ext-as/practise4.cpp
         #advanced_C/pointers-to_class_members.cpp
@@ -42,8 +43,8 @@ add_executable(OOP
         #ex4-4-5virtual-methods-override-final-vdestr/employee.cpp
         #ex4-6-pure-virt-functions-abstract-classes/theory.cpp
         #LABS/Lab6.cpp
+        #ex4-4virtual-methods/function-interface.cpp
+        #ex4-4-5virtual-methods-override-final-vdestr/thing-storage.cpp)
+        #        ex3-3-redef-rowna-sie/DArray.cpp
+        #        ex2_6_methods_ot_of_class/main.cpp)
 )
-#ex4-4virtual-methods/function-interface.cpp
-#ex4-4-5virtual-methods-override-final-vdestr/thing-storage.cpp)
-#        ex3-3-redef-rowna-sie/DArray.cpp
-#        ex2_6_methods_ot_of_class/main.cpp)
