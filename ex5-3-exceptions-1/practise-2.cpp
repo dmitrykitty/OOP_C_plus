@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 
 class ArrayInt {
@@ -17,7 +18,7 @@ public:
         }
     }
     //Copy constructor
-    //assignment operator=
+    //Assignment operator=
 
     ~ArrayInt() {
         delete[] data;
