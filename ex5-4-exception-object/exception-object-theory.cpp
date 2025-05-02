@@ -73,5 +73,7 @@ int main() {
 
     //kiedy mamy jakis exception np w load_data - we wszystkich obiektach stworzonych w stack frame są wywoływane
     //konstruktory - tutaj dla std::ifstream ifs
+    //jak jest throw exception in constructor - nie będzie wywołany destructor, bo obiekt nie zostanie w pełni utworzony
+    //
     return 0;
 }
