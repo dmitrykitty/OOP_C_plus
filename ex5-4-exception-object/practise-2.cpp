@@ -34,10 +34,12 @@ int main() {
 
     ConvertToInt str_to_int;
     try {
-        std::cout << str_to_int(str);
+        std::cout << str_to_int(str) << std::endl;
     } catch (ExceptionConvert& ex) {
         std::cout << ex.get_exception_text() << std::endl;
     }
+
+    std::cout << 5 << std::endl;
 
 
     return 0;

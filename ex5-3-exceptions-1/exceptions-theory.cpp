@@ -11,7 +11,8 @@ int perimetr(int a, int b, int c) {
         //tam wywołuje się funkcja
         //std::terminate(); po niej
         //std::abort(); powoduje ze cały program konczy działanie
-        //zeby programa sie nie przerywała awaryjnie, mamy złapac ten exception za pomocą TRY CATch
+        //zeby programa sie nie przerywała awaryjnie, mamy złapac ten exception za pomocą try{} catch{}
+        //dalszy ciąg programy
 
     }
     if (a > b + c || b > a + c || c > a + b) {
