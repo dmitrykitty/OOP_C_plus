@@ -7,6 +7,7 @@ int divide(int a, int b) {
         throw std::logic_error("Divide by zero");
     return a / b;
 }
+
 //wyjątki - runtime rzecz
 /*co rzuca wyjątki:
 4 operatory:
@@ -28,7 +29,40 @@ ___________________________________________________________________
 Hierarchia:
 -Logic error(winny jest uzytkownik)
 -Runtime error(cos poszło nie tak)
+
+___________________________________________________________________
+RAII - Resource Acquisition Is Initialization
+
+Wydzialamy pamiéc i coś rzuca wyjątek i nie robimy delete
+dla dynamicznie wydzielonej pamięci
+otwieranie plikow
  */
+
+//robimy wrapper ktory będzie usuwał nie usunięte obiekty
+//teraz wyżej stosujemy Wrapper(Unique PTR)
+struct SmartPTR {
+    int* links;
+    explicit SmartPTR(int* links): links(links) {}
+
+    SmartPTR(const SmartPTR&) = delete; //zabraniamy copy, żeby nie było podwojnego delete
+    SmartPTR& operator=(const SmartPTR&) = delete; //tu to samo
+    //trzeba jeszcze dodac move constructor
+    ~SmartPTR() { delete links; }
+    int& operator*() const { return *links; }
+};
+
+void g(const SmartPTR& ptr) {
+    if (*ptr == 0)
+        throw 1;
+}
+
+void f(int x) {
+    SmartPTR wp(new int(x)); //zamiast linijki niżej
+    //int* p = new int(x);
+    g(wp);
+}
+
+
 int main() {
     try {
         divide(3, 0);
