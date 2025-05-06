@@ -53,7 +53,7 @@ int main() {
     } catch (int) {
         std::cout << "Length of the side must be positive" << std::endl;
     }
-    // bloki cathc sprawdzane od gory, moze zadziałac tylko jeden
+    // bloki catch sprawdzane od gory, moze zadziałac tylko jeden
 
 
     int data{};

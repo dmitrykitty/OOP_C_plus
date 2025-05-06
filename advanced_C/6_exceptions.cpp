@@ -21,8 +21,9 @@ Difference between runtime errors and exceptions:
     - processora
     - C++
     dzielenie na 0 nie jest exception poziomu C++, tylko poziomu processora (floating point exception (core dumped))
-    segmentation fault
-    stack overflow
+    segmentation fault (stack overflow, array out of bounds, nullptr dereference)
+    aborted(uncaught exception -> terminate() -> abort(), pure virtual function call)
+
 ___________________________________________________________________
 Hierarchia:
 -Logic error(winny jest uzytkownik)
