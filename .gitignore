@@ -1,4 +1,4 @@
 *.exe
 cmake-build-debug/
 CMakeLists.txt
-advanced_C/kolokwium/*
+kolokwium/*
