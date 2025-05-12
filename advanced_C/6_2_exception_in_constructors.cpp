@@ -39,7 +39,9 @@ B - tworzenie b2
 Caught -b2 orak b3 oraz k nie jest stworzony
 Caught
 Exception w liscie inicjalizacji K, czyli obiekt K nie jest stworzony
-try przed:
+przed catch juz wszystkie pola zostały usunięte
+try przed:, tak samo można przed funkcjami void f()try { } catch(...){ }
+po try w kosntruktorze automatycznie robi się throw
 */
 
 struct K {
@@ -55,6 +57,15 @@ struct K {
         std::cout << "~K" << std::endl;
     }
 };
+
+template <typename T>
+void g();
+
+template <typename T>
+void f() noexcept(std::is_reference_v<T>) {} //no except jezeli T is referce
+
+template <typename T>
+void h() noexcept(noexcept(g<int>())){} //noexcept jezeli g<T> noexcept
 
 int main() {
     try {
