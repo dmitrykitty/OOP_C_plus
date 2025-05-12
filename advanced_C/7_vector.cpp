@@ -1,5 +1,7 @@
 #include <algorithm>
 #include <cstdint>
+#include <iostream>
+#include <vector>
 
 template<typename T>
 class vector {
@@ -7,37 +9,63 @@ class vector {
     size_t size_;
     size_t capacity_;
 
-public:
     //----------------------------------------------------------------------
     //ITERATOR
-    class iterator {
-        T* ptr;
-        explicit iterator(T* ptr) : ptr(ptr) {}
+    //jeszcze warto dodac reverse and const reverse iterator
+    //adapter for iterator, tylkoc wszystko reversed std::reverse<> pozwala to zrobic
+
+    template<bool IsConst>
+    //class const_iterator {} //nie mozna zmieniac to, co on zwraca
+    //zeby nie robic copy_paste -> template
+    class base_iterator {
+    public:
+        using pointer_type = std::conditional_t<IsConst, const T *, T *>;
+        using reference_type = std::conditional_t<IsConst, const T &, T &>;
+        using value_type = T;
+
+    private:
+        pointer_type ptr; //jezeli true -> const T*, else T*
+
 
     public:
-        iterator(const iterator&) = default;
+        explicit base_iterator(T* ptr) : ptr(ptr) {}
 
-        iterator& operator=(const iterator&) = default;
+        base_iterator(const base_iterator&) = default;
 
-        T& operator*() const { return *ptr; }
-        iterator& operator++() {
+        base_iterator& operator=(const base_iterator&) = default;
+
+        reference_type operator*() const { return *ptr; }
+        pointer_type operator->() const { return ptr; }
+
+        base_iterator& operator++() {
             ++ptr;
             return *this;
         }
-        iterator operator++(int) {
-            iterator tmp = *this;
+
+        base_iterator operator++(int) {
+            base_iterator tmp = *this;
             ++ptr;
             return tmp;
         }
     };
 
-    iterator begin() {
-        return iterator{arr_};
-    }
+public:
+    using iterator = base_iterator<false>;
+    using const_iterator = base_iterator<true>;
+    using reverse_iterator = std::reverse_iterator<iterator>;
+    using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-    iterator end() {
-        return iterator{arr_ + size_};
-    }
+    iterator begin() { return {arr_}; }
+
+    iterator end() { return {arr_ + size_}; }
+
+    const_iterator begin() const { return {arr_}; }
+
+    const_iterator end() const { return {arr_ + size_}; }
+
+    const_iterator cbegin() const { return arr_; }
+
+    const_iterator cend() const { return arr_ + size_; }
 
     //--------------------------------------------------------------------------------------
     void reserve(size_t new_capacity) {
@@ -119,5 +147,18 @@ public:
 };
 
 int main() {
+
+    std::vector<int> vec(10);
+    std::vector<int>::iterator it = vec.begin() + 5;
+    //nie mozna w taki sposob robic z referencjami oraz pointerami
+    //jak się zachowuje iterator?
+    //rownież UB
+
+    //po swap iteratopr ma wskazywac na ten sam adres jak wskazywał przed
+    vec.push_back(10);
+    std::cout << *it;
+
+    //dla deq ok z pointerami oraz referencjami, ale UB z iteratorem
+    //dla list, map, set wszystko ok, wszystko jest valid
     return 0;
 }
