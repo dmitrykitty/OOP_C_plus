@@ -7,11 +7,44 @@ class vector {
     size_t size_;
     size_t capacity_;
 
+public:
+    //----------------------------------------------------------------------
+    //ITERATOR
+    class iterator {
+        T* ptr;
+        explicit iterator(T* ptr) : ptr(ptr) {}
+
+    public:
+        iterator(const iterator&) = default;
+
+        iterator& operator=(const iterator&) = default;
+
+        T& operator*() const { return *ptr; }
+        iterator& operator++() {
+            ++ptr;
+            return *this;
+        }
+        iterator operator++(int) {
+            iterator tmp = *this;
+            ++ptr;
+            return tmp;
+        }
+    };
+
+    iterator begin() {
+        return iterator{arr_};
+    }
+
+    iterator end() {
+        return iterator{arr_ + size_};
+    }
+
+    //--------------------------------------------------------------------------------------
     void reserve(size_t new_capacity) {
         if (new_capacity <= capacity_) {
             return;
         }
-        T* new_arr = new_arr = reinterpret_cast<T *>(new char[new_capacity * sizeof(T)]);
+        T* new_arr = reinterpret_cast<T *>(new char[new_capacity * sizeof(T)]);
         //new_arr = new T[new_capacity]; problem - nie trzeba wywoływac konstruktory klas złożonych
         //a jak nie ma konstruktora domyślnego u T?
         //allocatory działają akurat w taki sposob
