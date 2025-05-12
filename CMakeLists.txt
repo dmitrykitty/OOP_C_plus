@@ -23,6 +23,7 @@ add_executable(OOP
         #advanced_C/4-virtual-methods.cpp
         #advanced_C/5-dynamic-cast.cpp
         ex5-3-exceptions-1/exceptions-theory.cpp
+        advanced_C/8_1_output_iterator.cpp
         #ex5-3-exceptions-1/practise-1.cpp
         #ex5-3-exceptions-1/practise-2.cpp
         #ex5-3-exceptions-1/practise-3.cpp
