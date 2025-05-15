@@ -3,9 +3,16 @@
 class PointND {
     short* coords{nullptr}; // координаты точки
     size_t dims{0}; // число координат
+    short error = 0;
 
 public:
     PointND() = default;
+
+    PointND(const PointND& other): dims(other.dims) {
+        coords = new short[dims];
+        for (size_t i = 0; i < dims; ++i)
+            coords[i] = other.coords[i];
+    }
 
     PointND(short* cds, size_t len) : dims(len) {
         coords = new short[dims];
@@ -16,14 +23,13 @@ public:
     ~PointND() { delete[] coords; }
 
     short operator[](int index) const {
-        if (index > 0 && index < dims)
+        if (index >= 0 && index < dims)
             return coords[index];
         return 0;
     }
 
     short& operator[](int index) {
-        static int error = 0;
-        if (index > 0 && index < dims)
+        if (index >= 0 && index < dims)
             return coords[index];
         return error;
     }
@@ -40,7 +46,7 @@ public:
 
     PointND& operator++() {
         for (size_t i = 0; i < dims; ++i)
-            coords[i] = coords[i] + 1;
+            ++coords[i];
         return *this;
     }
 
@@ -52,7 +58,7 @@ public:
 
     PointND& operator--() {
         for (size_t i = 0; i < dims; ++i)
-            coords[i] = coords[i] - 1;
+            --coords[i];
         return *this;
     }
 
@@ -77,6 +83,12 @@ public:
             }
         return *this;
     }
+
+    size_t get_dims() const { return dims; }
 };
 
-int main() {}
+int main() {
+    short coords[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+    PointND point(coords, std::size(coords));
+    std::cout << point[12] << std::endl;
+}
