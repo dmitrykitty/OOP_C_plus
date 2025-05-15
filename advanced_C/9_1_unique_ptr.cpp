@@ -1,8 +1,9 @@
 #include<iostream>
+#include <memory>
 
 //smart pointers -> realizacja RAII dla dynamiocznie wydzielonej pamieci
 
-template<typename T>
+template<typename T, typename Deleter = std::default_delete<T>>
 class unique_ptr {
     T* ptr;
 

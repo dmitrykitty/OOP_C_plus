@@ -13,7 +13,7 @@ distance(Iterator first, Iterator last) {
     }
     int i = 0;
     for (; first != last; ++first, ++i) {
-        //emty body
+        //empty body
     }
     return i;
 }
