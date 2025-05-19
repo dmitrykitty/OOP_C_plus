@@ -23,7 +23,7 @@ int main()
     std::string digit;
     getline(std::cin, digit);
 
-    const char* str = digit.c_str(); // массив символов char с прочитанной строкой
+    const char* str = digit.c_str();
     ConvertToInt str_to_int;
     std::cout << str_to_int(str) << " " << str_to_int.is_error() << std::endl;
 
