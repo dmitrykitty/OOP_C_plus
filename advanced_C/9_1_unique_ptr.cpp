@@ -6,23 +6,25 @@
 template<typename T, typename Deleter = std::default_delete<T>>
 class unique_ptr {
     T* ptr;
+    [[no_unique_adress]]Deleter del; //custom deleter, nie jest obowiązkowy
 
 public:
     explicit unique_ptr(T* ptr) : ptr(ptr) {}
-    ~unique_ptr() { delete ptr; }
+    ~unique_ptr() {  del(ptr); }
 
     unique_ptr(const unique_ptr& x) = delete;
 
     unique_ptr& operator=(const unique_ptr& x) = delete;
 
-    unique_ptr(unique_ptr&& other) noexcept: ptr(other.ptr) {
+    unique_ptr(unique_ptr&& other) noexcept: ptr(other.ptr), del(std::move(other.del)) {
         other.ptr = nullptr;
     }
 
     unique_ptr& operator=(unique_ptr&& other) noexcept {
         if (this != &other) {
-            delete ptr;
+            del(ptr);
             ptr = other.ptr;
+            del = std::move(other.del);
             other.ptr = nullptr;
         }
         return *this;
