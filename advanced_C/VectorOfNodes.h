@@ -90,7 +90,7 @@ public:
     Node& at(size_t index);
     const Node& at(size_t index) const;
     void shrink_to_fit();
-    void insert(size_t index, const Node& value);
+    iterator insert(iterator pos, const Node& value);
 
 };
 

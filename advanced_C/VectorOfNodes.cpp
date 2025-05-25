@@ -124,6 +124,8 @@ const VectorOfNodes::Node& VectorOfNodes::at(size_t index) const {
     return arr_[index];
 }
 
+//------------------------------SHRINK_TO_FIT---------------------------------
+
 void VectorOfNodes::shrink_to_fit() {
     if (capacity_ == sz_)
         return;
@@ -142,4 +144,20 @@ void VectorOfNodes::shrink_to_fit() {
     ::operator delete [](arr_);
     arr_ = newArr;
     capacity_ = sz_;
+}
+
+//------------------------------INSERT---------------------------------
+
+VectorOfNodes::iterator VectorOfNodes::insert(iterator pos, const Node& value) {
+    size_t index = pos - begin();
+    if (sz_ == capacity_)
+        reserve(capacity_ ? capacity_ * 2 : 1);
+    new(arr_ + sz_)Node(std::move(arr_[sz_ - 1]));
+    for (size_t i = sz_ - 1; i > index; ++i)
+        arr_[i] = std::move(arr_[i - 1]);
+
+    arr_[index].~Node();
+    new(arr_ + index)Node(value);
+    ++sz_;
+    return {arr_ + index};
 }
