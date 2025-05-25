@@ -5,6 +5,7 @@
 #include <string>
 #include <compare>
 #include <iostream>
+#include <optional>
 
 class VectorOfNodes {
     //------------------------------NODE---------------------------------
@@ -71,12 +72,23 @@ public:
     VectorOfNodes(const VectorOfNodes& other);
     VectorOfNodes(VectorOfNodes&& other);
     ~VectorOfNodes();
+    //------------------------------GETTERS---------------------------------
+    size_t size()const { return sz_; }
+    size_t capacity()const { return capacity_; }
+    bool empty()const { return sz_ > 0; }
+    Node* front() const { return sz_? arr_[0] : nullptr; }
+    Node* back() const { return sz_? arr_[sz_ - 1] : nullptr; }
 
     //------------------------------OPERATORS---------------------------------
     VectorOfNodes& operator=(VectorOfNodes other);
+    Node& operator[](size_t index);
+    const Node& operator[](size_t index)const;
 
     void push_back(const Node& newNode);
+    void pop_back();
     void reserve(size_t newCapacity);
+    Node& at(size_t index);
+    const Node& at(size_t index) const;
 };
 
 

@@ -65,7 +65,13 @@ VectorOfNodes& VectorOfNodes::operator=(VectorOfNodes other) {
     swap(other);
     return *this;
 }
+VectorOfNodes::Node& VectorOfNodes::operator[](size_t index) {
+    return arr_[index];
+}
 
+const VectorOfNodes::Node& VectorOfNodes::operator[](size_t index) const {
+    return arr_[index];
+}
 
 //------------------------------RESERVE---------------------------------
 void VectorOfNodes::reserve(size_t newCapacity) {
@@ -94,4 +100,23 @@ void VectorOfNodes::push_back(const Node& newNode) {
     new(arr_ + sz_)Node(newNode);
     ++sz_;
 }
+//------------------------------POP_BACK---------------------------------
+void VectorOfNodes::pop_back() {
+    if (back()) {
+        back().~Node();
+        --sz_;
+    }
+}
 
+//------------------------------AT---------------------------------
+VectorOfNodes::Node& VectorOfNodes::at(size_t index) {
+    if (index >= sz_)
+        throw std::out_of_range("VectorOfNodes::at");
+    return arr_[index];
+}
+
+const VectorOfNodes::Node& VectorOfNodes::at(size_t index) const {
+    if (index >= sz_)
+        throw std::out_of_range("VectorOfNodes::at");
+    return arr_[index];
+}
