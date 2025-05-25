@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.30)
 project(OOP)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED   ON)
+set(CMAKE_CXX_EXTENSIONS          OFF)
 
 add_executable(OOP
         #ex4-6-pure-virt-functions-abstract-classes/person-multiple-inheritance-practise.cpp
@@ -24,6 +26,8 @@ add_executable(OOP
         #advanced_C/5-dynamic-cast.cpp
         ex5-3-exceptions-1/exceptions-theory.cpp
         advanced_C/8_1_output_iterator.cpp
+        advanced_C/VectorOfNodes.h
+        advanced_C/VectorOfNodes.cpp
         #ex5-3-exceptions-1/practise-1.cpp
         #ex5-3-exceptions-1/practise-2.cpp
         #ex5-3-exceptions-1/practise-3.cpp

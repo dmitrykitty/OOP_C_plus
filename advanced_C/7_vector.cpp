@@ -24,7 +24,7 @@ class vector {
         using value_type = T;
 
     private:
-        pointer_type ptr; //jezeli true -> const T*, else T*
+        T* ptr; //jezeli true -> const T*, else T*
 
 
     public:
