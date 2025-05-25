@@ -3,7 +3,7 @@
 //------------------------------METODY_POMOCNICZE---------------------------------
 
 void VectorOfNodes::copy(const VectorOfNodes& other) {
-    arr_ = static_cast<Node*>(::operator new[](other.capacity_ * sizeof(Node)));
+    arr_ = static_cast<Node *>(::operator new[](other.capacity_ * sizeof(Node)));
     for (size_t i = 0; i < other.sz_; ++i)
         new(arr_ + i)Node(std::move(other.arr_[i]));
 
@@ -33,8 +33,8 @@ void VectorOfNodes::swap(VectorOfNodes& other) {
     std::swap(sz_, other.sz_);
     std::swap(capacity_, other.capacity_);
     std::swap(arr_, other.arr_);
-
 }
+
 //------------------------------KONSTRUKTORY---------------------------------
 VectorOfNodes::VectorOfNodes(size_t size = 0) {
     if (size) {
@@ -50,7 +50,7 @@ VectorOfNodes::VectorOfNodes(const VectorOfNodes& other) {
     copy(other);
 }
 
-VectorOfNodes::VectorOfNodes(VectorOfNodes&& other)  noexcept {
+VectorOfNodes::VectorOfNodes(VectorOfNodes&& other) noexcept {
     move(std::move(other)); //rzutowanie do r-value
 }
 
@@ -58,6 +58,7 @@ VectorOfNodes::VectorOfNodes(VectorOfNodes&& other)  noexcept {
 VectorOfNodes::~VectorOfNodes() {
     free();
 }
+
 //------------------------------OPERATORS---------------------------------
 
 VectorOfNodes& VectorOfNodes::operator=(VectorOfNodes other) {
@@ -65,6 +66,7 @@ VectorOfNodes& VectorOfNodes::operator=(VectorOfNodes other) {
     swap(other);
     return *this;
 }
+
 VectorOfNodes::Node& VectorOfNodes::operator[](size_t index) {
     return arr_[index];
 }
@@ -78,7 +80,7 @@ void VectorOfNodes::reserve(size_t newCapacity) {
     if (capacity_ >= newCapacity)
         return;
 
-    Node* newArr = static_cast<Node*>(::operator new[](newCapacity * sizeof(Node)));
+    Node* newArr = static_cast<Node *>(::operator new[](newCapacity * sizeof(Node)));
     //wydzielenie surowej pamieci
     for (size_t i = 0; i < sz_; ++i)
         new(newArr + i)Node(std::move(arr_[i]));
@@ -100,6 +102,7 @@ void VectorOfNodes::push_back(const Node& newNode) {
     new(arr_ + sz_)Node(newNode);
     ++sz_;
 }
+
 //------------------------------POP_BACK---------------------------------
 void VectorOfNodes::pop_back() {
     if (back()) {
@@ -119,4 +122,24 @@ const VectorOfNodes::Node& VectorOfNodes::at(size_t index) const {
     if (index >= sz_)
         throw std::out_of_range("VectorOfNodes::at");
     return arr_[index];
+}
+
+void VectorOfNodes::shrink_to_fit() {
+    if (capacity_ == sz_)
+        return;
+
+    if (sz_ == 0) {
+        free();
+        return;
+    }
+    Node* newArr = static_cast<Node *>(::operator new [](sz_ * sizeof(Node)));
+
+    for (size_t i = 0; i < sz_; ++i)
+        new(newArr + i)Node(std::move(arr_[i]));
+    for (size_t i = 0; i < sz_; ++i)
+        arr_[i].~Node();
+
+    ::operator delete [](arr_);
+    arr_ = newArr;
+    capacity_ = sz_;
 }
