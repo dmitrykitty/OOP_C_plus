@@ -29,7 +29,7 @@ void VectorOfNodes::free() {
     sz_ = capacity_ = 0;
 }
 
-void VectorOfNodes::swap(VectorOfNodes& other) {
+void VectorOfNodes::swap(VectorOfNodes& other) noexcept {
     std::swap(sz_, other.sz_);
     std::swap(capacity_, other.capacity_);
     std::swap(arr_, other.arr_);

@@ -1,4 +1,5 @@
 #include <iterator>
+#include <vector>
 
 //distancew O(n) dla set, map, ale O(1) dla vector, array
 //podobnie działa advance
@@ -17,6 +18,7 @@ distance(Iterator first, Iterator last) {
     }
     return i;
 }
+std::vector<int> v{1, 2 ,4, static_cast<int>(2.0)};
 
 //pomocnicze funcje std::prev oraz std:next
 

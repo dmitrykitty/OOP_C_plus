@@ -5,7 +5,6 @@
 #include <string>
 #include <compare>
 #include <iostream>
-#include <optional>
 
 class VectorOfNodes {
     //------------------------------NODE---------------------------------
@@ -25,7 +24,7 @@ protected:
     void copy(const VectorOfNodes& other);
     void move(VectorOfNodes&& other);
     void free();
-    void swap(VectorOfNodes& other);
+    void swap(VectorOfNodes& other) noexcept;
 
 public:
     //------------------------------ITERATOR---------------------------------
@@ -70,7 +69,7 @@ public:
     //------------------------------CSTR, DSTR---------------------------------
     VectorOfNodes(size_t size);
     VectorOfNodes(const VectorOfNodes& other);
-    VectorOfNodes(VectorOfNodes&& other);
+    VectorOfNodes(VectorOfNodes&& other) noexcept ;
     ~VectorOfNodes();
     //------------------------------GETTERS---------------------------------
     size_t size()const { return sz_; }
