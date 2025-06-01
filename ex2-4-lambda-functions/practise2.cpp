@@ -19,7 +19,7 @@ void remove_elem(short* ar, int& len, filter_func filter)
 
 
 int main() {
-    short marks[max_length_ar] = {0};
+    short marks[max_length_ar] = {};
     int count = 0;
     while(count < max_length_ar && std::cin >> marks[count])
         count++;
