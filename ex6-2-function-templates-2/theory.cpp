@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 
 template<typename T1, typename T2>
@@ -48,9 +49,24 @@ int add(int a, int b) {
     return a + b;
 }
 
+template <typename T1, typename T2>
+int min2(T1 a, T2 b) { return (a < b) ? a : b; }
+
+template <typename T = short>
+auto min2(T a, T b) { return (a < b) ? a : b; }
+
+template <typename A = int, typename D = double>
+A min2(const D& a, const D& b) { return (a < b) ? a : b; }
+
+char min2(char a, char b) { return (a < b) ? a : b; }
 
 
 int main() {
+    int r_1 = min2(1, 2); //bład, kilka templates naraz
+    double r_2 = min2(1.5, 2);
+    long r_3 = min2('a', 'b'); //char bez template
+    auto r_4 = min2(1, (short)5);
+
     double res_1 = sq_rect(5, 6.5); //zwracany typ - double
     double res_2 = sq_rect(5, 6); //zwracany typ - int
     short res_3 = sq_rect<short, short>(5, 6); //zwracany typ int, bo a * b konwersja do int
@@ -75,6 +91,7 @@ int main() {
     add(5.5, 6.6); //add1
     int a = 5, b = 7;
     add(&a, &b); //add2
+    add<>(5, 6); //add1 juz jest template z paramterem T
 
     //im dokladniej jest opisany template/funkcja -> większa szansa na wywołanie
 
