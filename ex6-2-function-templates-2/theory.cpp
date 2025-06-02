@@ -6,6 +6,11 @@ auto sq_rect(T1 a, T2 b) {
     return a * b;
 }
 
+// double res_1 = sq_rect(5, 6.5); //zwracany typ - double
+// double res_2 = sq_rect(5, 6); //zwracany typ - int
+// short res_3 = sq_rect<short, short>(5, 6); //zwracany typ int, bo a * b konwersja do int
+// short res_4 = sq_rect<double>(3, 4); //zwracany typ double, bo 3 typu double, a double * int -> double
+
 template<typename RT = double, typename T1, typename T2>
 RT sum(T1 a, T2 b) { return a + b; }
 
