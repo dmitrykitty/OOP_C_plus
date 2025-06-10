@@ -9,10 +9,10 @@ class array {
     T arr[N];
 };
 
-template <size_t M, size_t N, typename T = double>
+template<size_t M, size_t N, typename T = double>
 class Matrix {
-    std::vector<std::vector<T>> data;
-    Matrix(): data(M, std::vector<T>(N)){}
+    std::vector<std::vector<T> > data;
+    Matrix(): data(M, std::vector<T>(N)) {}
 };
 
 template<size_t N, typename T = double>
@@ -22,9 +22,12 @@ template<size_t M, size_t K, size_t N, typename T>
 Matrix<M, N, T> operator*(const Matrix<M, K, T>& a, const Matrix<K, N, T>& b);
 
 //Template template params
-template<typename T, typename K, template<typename, typename> class Container = std::vector<T>>
+template<typename T, template<typename> class Container = std::vector>
 class Stack {
-    Container<T, K> cont; //czyli Stack jest obudową nad template class, gdzie jako default jest Vector
+    Container<T> cont; //czyli Stack jest obudową nad template class, gdzie jako default jest std::vector
 };
 
-int main() {}
+int main() {
+    Stack<int, std::vector> s;
+    Stack<int> d; //działa też, xD
+}
