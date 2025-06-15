@@ -5,6 +5,7 @@
 
 int main() {
     //labdy moga byc konwertowane automatyczne do ret_type (*func)(get_type)
+    //closure type
     auto inc = [](int& x) -> decltype(auto) {
         //decltype(int) -> int&
         ++x;
@@ -52,4 +53,11 @@ int main() {
 
     //----------------------------------------------------------------------------
     //przekazujemy jako const value, bo u nas const operator()
+
+    std::vector v2 = {1, 2, 2, 5, 7, 9, 9, 11 };
+    auto it = std::unique(v2.begin(), v2.end());
+    v2.erase(it, v2.end());
+    std::for_each(v2.begin(), v2.end(), [](int n){  std::cout << n << " ";});
+
+    //----------------------------------------------------------------------------------------
 }

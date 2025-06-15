@@ -26,8 +26,8 @@ void f(const T& x, const U& y) {
         //do something ...
     }
 }
-//-------------------------------------------------
-
+//-------------REMOVE_REFERENCE----------------------
+//zwraca typ bez referencji, pointera, const
 template <typename T>
 struct remove_reference {
     using type = T;
@@ -47,6 +47,34 @@ void f() {
     no_ref_type y = 5;
     //typename, bo type jest typen, a nie statycznym olem klasy
 }
+
+//----------------REMOVE_CONST-------------------------------
+template <typename T>
+struct remove_const {
+    using type = T;
+};
+
+template <typename T>
+struct remove_const<const T> {
+    using type = T;
+};
+//difference between remove_const i const_cast
+//w czasie kompilacji i działa tylko dla typow szablonu, a const cast z wartosciami(pointer, reference)
+
+//------------------STD::CONDITIONAL----------------------------------
+template <bool B, typename T, typename F>
+struct conditional {
+    using type = F;
+};
+template <typename T, typename F>
+struct conditional<true, T, F> {
+    using type = const T;
+};
+
+template <bool B, typename T, typename F>
+using conditional_t = typename conditional<true, T, F>::type;
+//szablonowe usingi pozwalajace nie pisac typename ...::type
+
 
 int main() {
     return 0;

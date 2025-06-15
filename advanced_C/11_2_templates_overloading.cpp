@@ -70,15 +70,23 @@ struct A<const W> {
 template<typename T, typename U>
 void m(T, U) { std::cout << 1; }
 
+//u funkcji jest tylko pełna specjalizacja
+template<>//spec
+void m(int, int) { std::cout << 3; }
+
 //overloading - najpierw wybierana funkcja przeciazona, a pozniej specjalizacja
 //czyli w tym przypadku wybierany drugi template i u niego jest specjalizacja, wiec bedzie wybrany 3.
 //w innym przypadku najbardziej pasujaca przeciazona funkcja - 2 i będzie ona wybrana
 template<typename T>
 void m(T, T) { std::cout << 2; }
 
-//u funkcji jest tylko pełna specjalizacja
-template<>
-void m(int, int) { std::cout << 3; }
+
+
+
+//overlod ->spec
+
+
+
 
 
 
