@@ -1,4 +1,5 @@
 #include <compare>
+#include <deque>
 #include <iostream>
 #include <vector>
 //moze byc inregral ypes + od C++ 20 float, double
@@ -30,4 +31,5 @@ class Stack {
 int main() {
     Stack<int, std::vector> s;
     Stack<int> d; //działa też, xD
+    Stack<double, std::deque> m;
 }

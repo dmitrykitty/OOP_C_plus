@@ -11,6 +11,11 @@ struct is_same<T, T> {
     static constexpr bool value = true;  //specjalizacja dla identycznych typów
 };
 
+template<typename T, typename U>
+const bool is_same_v = is_same<T, U>::value;
+//template dla const zmiennej -> pozwal nie pisac is_same...::value, tylko is_same_v
+
+
 template <typename T, typename U>
 void f(const T& x, const U& y) {
     //...
